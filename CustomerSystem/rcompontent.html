@@ -1,0 +1,53 @@
+<div class="container">
+    <button class="btn btn-success">
+    <span class="glyphicon glyphicon-user"></span>创建新用户
+    </button>
+    <hr>
+    <form class="form-horizontal" name="myForm" novalidate>
+     <div class="form-group">
+         <label class="col-sm-2 control-label">姓名:</label>
+         <div class="col-sm-10">
+         <input type="text" name="username" ng-model="user.username" placeholder="姓名"  required>
+         <span style="color:red" ng-show="myForm.username.$dirty && myForm.username.$invalid">
+         <span ng-show="myForm.username.$error.required">用户名不能为空</span>
+    </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">密码:</label>
+       <div class="col-sm-10">
+       <input type="password" name="pass" ng-model="user.pass" placeholder="密码"  required>
+       <span style="color:red" ng-show="myForm.pass.$dirty && myForm.pass.$invalid">
+       <span ng-show="myForm.pass.$error.required">密码不能为空</span>
+      
+       </div>
+  </div>
+  <div class="form-group">
+      <label class="col-sm-2 control-label">密码确认:</label>
+      <div class="col-sm-10">
+      <input type="password" name="pass2" ng-model="user.pass2" placeholder="密码确认" required>
+      <span style="color:red" ng-show="myForm.pass2.$dirty && myForm.pass2.$invalid">
+      <span ng-show="myForm.pass2.$error.required">密码确认不能为空</span>
+      </div>
+      <div ng-show="myForm.pass2.$valid">                  
+      <div style="color:red"  ng-show="user.pass!=user.pass2">两次密码输入不一致</div>
+     </div>               
+  </div>
+  <div class="form-group">
+      <label class="col-sm-2 control-label">性别:</label>
+      <div class="col-sm-10">
+      <input type="radio" name="sex" ng-model="user.sex" value="男"> 男
+      <input type="radio" name="sex" ng-model="user.sex" value="女"> 女
+      </div>
+  </div>
+  <div class="form-group">
+     <label class="col-sm-2 control-label">出生年龄:</label>
+      <div class="col-sm-10">
+     <input type="date" name="bday"  ng-model="user.birth">
+      </div>
+  </div>
+ </form>
+  <hr>
+  <button type="submit" class="btn btn-success" ng-click="zhuce()">
+  <span class="glyphicon glyphicon-save"></span>确认
+  </button>
+  </div>

@@ -1,0 +1,20 @@
+  <h2>用户登录</h2>
+        <form  name="myForm" novalidate>
+        <div class="form-group">
+        <p>用户名:<br>
+            <input type="text" name="user" ng-model="user.userName" required>
+            <span style="color:red" ng-show="myForm.user.$dirty && myForm.user.$invalid">
+            <span ng-show="myForm.user.$error.required">用户名不能为空</span>
+            </span>
+        </p>
+        </div>
+        <p>密码:<br>
+            <input type="password" name="pass" ng-model="user.pass"  required>
+            <span style="color:red" ng-show="myForm.pass.$dirty && myForm.pass.$invalid">
+            <span ng-show="myForm.pass.$error.required">密码不能为空</span>
+        </p>
+         <a href="register.html">注册</a>
+        <p>
+        <button ng-click="login()">登录</button>
+        </p>
+     </form>  
